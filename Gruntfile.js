@@ -41,6 +41,29 @@ module.exports = function (grunt) {
       src: ['**']
     },
 
+    // add appcahce task setting
+    appcache: {
+      options: {
+        // Task-specific options go here.
+        basePath: '<%= config.dist %>'
+      },
+      // Target-specific file lists and/or options go here.
+      all: {
+        dest: '<%= config.dist %>/sample.appcache',
+        cache: {
+          patterns: [
+            '<%= config.dist %>/images/*.png',
+            '<%= config.dist %>/scripts/*.js',
+            '<%= config.dist %>/styles/*.css',
+            '<%= config.dist %>/*.html',
+            '<%= config.dist %>/*.ico',
+            '<%= config.dist %>/*.png'
+          ],
+        },
+        network: '*'
+      }
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
