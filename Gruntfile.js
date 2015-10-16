@@ -32,6 +32,15 @@ module.exports = function (grunt) {
     // Project settings
     config: config,
 
+    //　add gh-pages task setting
+    'gh-pages': {
+      options: {
+        base: 'dist',
+        repo: 'https://github.com/MuneTamu/appcache.git'
+      },
+      src: ['**']
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
